@@ -22,6 +22,7 @@ Route::middleware('auth')->prefix('profile')->name('user.')->group(function ()
 
     Route::get('/', [\App\Http\Controllers\ProfileController::class, 'index'])->name('profile');
     Route::post('/', [\App\Http\Controllers\ProfileController::class, 'update'])->name('update');
+    Route::delete('/{user}', [\App\Http\Controllers\ProfileController::class, 'destroy'])->name('destroy');
 
 });
 

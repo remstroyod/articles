@@ -63,6 +63,16 @@
                 </div>
             </form>
 
+            <div class="text-center pt-5">
+                <a href="javascript:;" class="btn btn-danger btn-lg" onclick="event.preventDefault();document.getElementById('destroy-user-{{ $user->id }}').submit();">
+                    {{ __('Remove Account') }}
+                </a>
+                <form id="destroy-user-{{ $user->id }}" action="{{ route('user.destroy', $user) }}" class="d-none" method="post">
+                    @csrf
+                    @method('delete')
+                </form>
+            </div>
+
         </div>
     </div>
 </div>
